@@ -5,11 +5,11 @@ import { useEffect, useState, createContext, useContext, useCallback } from "rea
 interface Toast {
   id: string;
   message: string;
-  type: "success" | "error";
+  type: "success" | "error" | "warning";
 }
 
 interface ToastContextType {
-  showToast: (message: string, type?: "success" | "error") => void;
+  showToast: (message: string, type?: "success" | "error" | "warning") => void;
 }
 
 const ToastContext = createContext<ToastContextType>({
@@ -23,7 +23,7 @@ export function useToast() {
 export function ToastProvider({ children }: { children: React.ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([]);
 
-  const showToast = useCallback((message: string, type: "success" | "error" = "success") => {
+  const showToast = useCallback((message: string, type: "success" | "error" | "warning" = "success") => {
     const id = crypto.randomUUID();
     setToasts((prev) => [...prev, { id, message, type }]);
   }, []);
@@ -50,10 +50,14 @@ function ToastItem({ toast, onClose }: { toast: Toast; onClose: () => void }) {
     return () => clearTimeout(timer);
   }, [onClose]);
 
-  const bgColor = toast.type === "success" ? "bg-green-600" : "bg-red-600";
+  const bgColor = toast.type === "success" ? "bg-green-600" : toast.type === "warning" ? "bg-yellow-600" : "bg-red-600";
   const icon = toast.type === "success" ? (
     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+  ) : toast.type === "warning" ? (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
     </svg>
   ) : (
     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -81,7 +85,7 @@ function ToastItem({ toast, onClose }: { toast: Toast; onClose: () => void }) {
 
 interface ToastProps {
   message: string;
-  type: "success" | "error";
+  type: "success" | "error" | "warning";
   onClose: () => void;
   duration?: number;
 }
@@ -94,10 +98,14 @@ export default function Toast({ message, type, onClose, duration = 3000 }: Toast
     return () => clearTimeout(timer);
   }, [onClose, duration]);
 
-  const bgColor = type === "success" ? "bg-green-600" : "bg-red-600";
+  const bgColor = type === "success" ? "bg-green-600" : type === "warning" ? "bg-yellow-600" : "bg-red-600";
   const icon = type === "success" ? (
     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+  ) : type === "warning" ? (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
     </svg>
   ) : (
     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
