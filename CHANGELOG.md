@@ -1,23 +1,10 @@
-# Changelog — Proof of Work Generator
+# CHANGELOG.md — Proof of Work Generator
 
 All notable changes to this project will be documented in this file.
 
 ---
 
-## [Unreleased] — 2026-07-08
-
-### Added
-- **Simplified User Guides** — Quick-start guides for end users (2-3 min read):
-  - `docs/SIMPLE_USER_GUIDE.md` — Field Worker quick guide
-  - `docs/SIMPLE_ADMIN_GUIDE.md` — Admin quick guide
-  - `docs/SIMPLE_SUPERVISOR_GUIDE.md` — Supervisor quick guide
-
-### Changed
-- **`docs/README.md`** — Updated to show quick guides first, detailed guides second
-
----
-
-## [2026-07-07]
+## [Unreleased]
 
 ### Added
 - **User Documentation** — Complete user guide package:
@@ -27,6 +14,7 @@ All notable changes to this project will be documented in this file.
   - `docs/FIELD_WORKER_GUIDE.md` - Field worker role guide
   - `docs/README.md` - Documentation index
 
+### Added
 - **GitHub-Ready Setup** — Project configured for public repository:
   - Comprehensive `.gitignore` (secrets, dependencies, IDE files)
   - `.env.example` template with all variables documented
@@ -44,12 +32,6 @@ All notable changes to this project will be documented in this file.
   - Desktop: Full layout with sidebar
   - Responsive padding and spacing throughout
 
-- **Low Progress Jobs Section** — Dedicated expandable section showing jobs with <50% progress:
-  - Click to expand from Alert Banner or Progress Rendah stat card
-  - Shows job title, client, time elapsed, progress percentage
-  - Clickable links to job detail
-  - Close button to hide
-
 ### Changed
 - **Field Settings Page** — Updated UI consistency with better styling:
   - Light theme (matching admin/supervisor)
@@ -59,6 +41,14 @@ All notable changes to this project will be documented in this file.
   - Professional typography and color hierarchy
   - **Added back button** for easy navigation back to previous page
 
+### Added
+- **Low Progress Jobs Section** — Dedicated expandable section showing jobs with <50% progress:
+  - Click to expand from Alert Banner or Progress Rendah stat card
+  - Shows job title, client, time elapsed, progress percentage
+  - Clickable links to job detail
+  - Close button to hide
+
+### Changed
 - **Alert Banner** — Now shows: low progress jobs, late workers, workers without check-in
 - **Overdue Stat Card → Progress Rendah** — Shows jobs with low progress instead of overdue
 - **Worker Status Grid** — Workers with low progress jobs now have amber ring indicator
@@ -76,66 +66,62 @@ All notable changes to this project will be documented in this file.
 
 ## [2026-07-07]
 
-### Session 54
+### Session 54 (2026-07-07)
 - Restored Settings Pages (Admin, Supervisor, Field)
 - UI consistency fixed across themes
 - Navigation cleanup
 
-### Session 53
+### Session 53 (2026-07-07)
 - Added Profile Settings Page with password change
 
-### Session 52
+### Session 52 (2026-07-07)
 - Email PDF Attachment via Resend
 - Production mode (removed test targets)
 
-### Session 51
+### Session 51 (2026-07-07)
 - Fixed Sidebar position (sticky)
 - Per-user notification read status (seenBy array)
 
-### Session 50
+### Session 50 (2026-07-07)
 - Per-user notification read status implementation
 
-### Session 49
+### Session 49 (2026-07-07)
 - Supervisor Job Detail redesign (matching admin)
 
-### Session 48
+### Session 48 (2026-07-07)
 - Supervisor Dashboard job filter (ASSIGNED, IN_PROGRESS, COMPLETED only)
 - Activity feed with time-based job grouping
 - Time periods: Pagi (06-12), Siang (12-17), Sore (17-21), Malam (21-06)
 
-### Session 47
+### Session 47 (2026-07-07)
 - Clean up report files (web & PDF)
 
-### Session 46
+### Session 46 (2026-07-07)
 - PhotoComparison UI improvements
 
-### Session 45
+### Session 45 (2026-07-07)
 - PhotoComparison slider fix & relocation to admin/supervisor
 
-### Session 43-44
+### Session 43-44 (2026-07-07)
 - Late check-in & out-of-range override features
 - Photo upload flow redesign with compression
 
-### Session 41
+### Session 41 (2026-07-07)
 - Email template redesign (removed emojis, professional styling)
 
-### Session 39-40
+### Session 39-40 (2026-07-07)
 - Service Worker & offline features
 - Field worker advanced features (push notifications, offline photo queue, job timer)
 
-### Session 37-38
+### Session 37-38 (2026-07-07)
 - Field Worker UI/UX enhancements
 - Bug fixes
 
-### Session 35-36
+### Session 35-36 (2026-07-07)
 - Recurring page UI/UX enhancements
 - Bug fixes (405 error, empty jobs list, timezone fixes)
 
----
-
-## [2026-07-05]
-
-### Session 34
+### Session 34 (2026-07-05)
 - Supervisor Dashboard UI/UX
   - Real-time activity feed
   - Time-based job grouping
@@ -143,76 +129,60 @@ All notable changes to this project will be documented in this file.
   - Alert banner
   - View mode toggle
 
----
-
-## [2026-07-04]
-
-### Session 33
+### Session 33 (2026-07-04)
 - Supervisor UI redesign
   - Notifications page improvements
   - Jobs page redesign
   - Sidebar fixes
 
-### Session 32
+### Session 32 (2026-07-04)
 - Supervisor capabilities (view jobs, edit schedule, send PDF)
 
-### Session 31
+### Session 31 (2026-07-04)
 - Job assigned notification
 
-### Session 30
+### Session 30 (2026-07-04)
 - Fonnte WhatsApp API fix
 
-### Session 29
+### Session 29 (2026-07-04)
 - Worker WA notification fix
 
-### Session 26-28
+### Session 26-28 (2026-07-04)
 - UI fixes and reusable Modal component
 - Edit Job Modal location integration
 
-### Session 23-25
+### Session 23-25 (2026-07-04)
 - More available workers in seed
 
-### Session 20-22
+### Session 20-22 (2026-07-03)
 - Notification badge in sidebar
 - Notification page UI/UX improvements
 - Cron endpoint for auto-job creation
 
----
-
-## [2026-07-03]
-
-### Session 17-19
+### Session 17-19 (2026-07-03)
 - Collapsible sidebar
 - Report page slug fix
 - Job slug = LAP-YYYYMMDD-NNN format
 
-### Session 11-16
+### Session 11-16 (2026-07-03)
 - Slug-based URL routing for all pages
 - Field worker slug migration
 - Database sync fix
 
----
-
-## [2026-07-02]
-
-### Session 8-10
+### Session 8-10 (2026-07-02)
 - Comprehensive demo data seed
 - UI improvements
 - Missing CRUD implementation
 
-### Session 5-7
+### Session 5-7 (2026-07-02)
 - Templates, Recurring, Notifications pages
 - Job Templates & Recurring Schedules features
 
----
-
-## [2026-07-01]
-
-### Session 3-4
+### Session 3-4 (2026-07-01)
 - Email PDF integration
 - Bug fixes and login redirect
 
-### Session 1-2
+### Session 1-2 (2026-07-01)
 - Initial setup and code review
 
 ---
