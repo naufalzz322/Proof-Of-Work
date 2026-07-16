@@ -21,6 +21,7 @@ interface FetchedUser {
   email: string;
   phone?: string;
   role: string;
+  error?: string;
 }
 
 export default function ProfileDropdown({ user, variant = "sidebar" }: ProfileDropdownProps) {
