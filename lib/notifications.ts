@@ -193,7 +193,16 @@ Segera generate PDF dan kirim ke klien untuk invoice.`;
     },
   });
 
-  broadcastNotification(notification);
+  broadcastNotification({
+    id: notification.id,
+    type: notification.type,
+    title: notification.title,
+    message: notification.message,
+    jobSlug: notification.jobSlug,
+    jobNumber: notification.jobNumber,
+    isRead: false,
+    createdAt: notification.createdAt,
+  });
 }
 
 /**
@@ -230,7 +239,16 @@ Job siap untuk di-invoice!`;
     },
   });
 
-  broadcastNotification(notification);
+  broadcastNotification({
+    id: notification.id,
+    type: notification.type,
+    title: notification.title,
+    message: notification.message,
+    jobSlug: notification.jobSlug,
+    jobNumber: notification.jobNumber,
+    isRead: false,
+    createdAt: notification.createdAt,
+  });
 }
 
 /**
@@ -269,7 +287,16 @@ Segera follow-up dengan worker terkait!`;
     },
   });
 
-  broadcastNotification(notification);
+  broadcastNotification({
+    id: notification.id,
+    type: notification.type,
+    title: notification.title,
+    message: notification.message,
+    jobSlug: notification.jobSlug,
+    jobNumber: notification.jobNumber,
+    isRead: false,
+    createdAt: notification.createdAt,
+  });
 }
 
 /**
@@ -304,7 +331,16 @@ Job ${jobNumber} selesai!`;
     },
   });
 
-  broadcastNotification(notification);
+  broadcastNotification({
+    id: notification.id,
+    type: notification.type,
+    title: notification.title,
+    message: notification.message,
+    jobSlug: notification.jobSlug,
+    jobNumber: notification.jobNumber,
+    isRead: false,
+    createdAt: notification.createdAt,
+  });
 }
 
 /**
@@ -347,5 +383,14 @@ Worker akan menerima notifikasi WA.`;
     },
   });
 
-  broadcastNotification(notification);
+  broadcastNotification({
+    id: notification.id,
+    type: notification.type,
+    title: notification.title,
+    message: notification.message,
+    jobSlug: notification.jobSlug,
+    jobNumber: notification.jobNumber,
+    isRead: false,
+    createdAt: notification.createdAt,
+  });
 }
