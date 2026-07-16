@@ -144,7 +144,16 @@ Buka aplikasi untuk detail.`;
   });
 
   // Broadcast to SSE clients
-  broadcastNotification(notification);
+  broadcastNotification({
+    id: notification.id,
+    type: notification.type,
+    title: notification.title,
+    message: notification.message,
+    jobSlug: notification.jobSlug,
+    jobNumber: notification.jobNumber,
+    isRead: false,
+    createdAt: notification.createdAt,
+  });
 
   // Send WhatsApp
   await notifyViaWhatsApp(whatsappMessage);
