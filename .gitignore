@@ -1,0 +1,157 @@
+# ============================================
+# Proof of Work Generator - .gitignore
+# ============================================
+
+# ============================================
+# Dependencies
+# ============================================
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ============================================
+# Next.js
+# ============================================
+/.next/
+out/
+build/
+
+# ============================================
+# Environment Variables - NEVER PUSH THESE
+# ============================================
+.env
+.env.local
+.env.development
+.env.production
+.env*.local
+!.env.example
+!.env.example.local
+
+# Supabase / Database
+.env.supabase
+.env.staging
+.env.production
+
+# Never commit these patterns
+*.log
+.env*
+
+# ============================================
+# IDE & OS
+# ============================================
+.DS_Store
+Thumbs.db
+*.pem
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# ============================================
+# Testing & Debug
+# ============================================
+/coverage
+*.tsbuildinfo
+next-env.d.ts
+next-env.*.d.ts
+
+# Prisma
+/prisma/generated
+
+# ============================================
+# Build & Dist
+# ============================================
+dist/
+build/
+*.tgz
+.cache/
+
+# ============================================
+# Misc
+# ============================================
+*.pem
+*.log
+*.tmp
+*.temp
+.vercel
+.turbo
+
+# ============================================
+# Vercel (if deploying to Vercel)
+# ============================================
+.vercel
+
+# ============================================
+# TypeScript (if strict mode)
+# ============================================
+*.tsbuildinfo
+
+# ============================================
+# Images & Uploads (for local dev)
+# ============================================
+/public/uploads/*
+!/public/uploads/.gitkeep
+
+# ============================================
+# Seed data scripts (optional - can commit)
+# ============================================
+# Uncomment if you want to ignore seed files
+# /prisma/seed.ts
+# /scripts/
+
+# ============================================
+# Documentation (optional)
+# ============================================
+# CHANGELOG.md can be committed
+# WORKING.md - usually gitignored for public repos
+WORKING.md
+
+# ============================================
+# Credentials & Secrets Template
+# ============================================
+# Create a .env.example file with all required vars
+# Copy this to .env and fill in your values
+
+# ============================================
+# Example .env.example content:
+# ============================================
+# # Database
+# DATABASE_URL="postgresql://user:password@localhost:5432/proof_of_work"
+#
+# # Auth
+# AUTH_SECRET="generate-with-openssl-rand-base64-32"
+# NEXTAUTH_URL="http://localhost:3000"
+#
+# # Supabase
+# NEXT_PUBLIC_SUPABASE_URL="https://your-project.supabase.co"
+# NEXT_PUBLIC_SUPABASE_ANON_KEY="your-anon-key"
+# SUPABASE_SERVICE_ROLE_KEY="your-service-role-key"
+#
+# # Email (Resend)
+# RESEND_API_KEY="re_xxxxxxxxxxxx"
+#
+# # WhatsApp (Fonnte)
+# FONNTE_TOKEN="your-fonnte-token"
+#
+# # Cron Secret
+# CRON_SECRET="your-cron-secret"
+#
+# # App
+# NEXT_PUBLIC_APP_URL="http://localhost:3000"
+# NEXT_PUBLIC_COMPANY_NAME="Your Company Name"

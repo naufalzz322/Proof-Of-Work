@@ -1,0 +1,294 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-display), "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: var(--font-body), "Inter", system-ui, sans-serif;
+
+  /* Brand palette — construction amber */
+  --color-brand-amber: #D97706;
+  --color-brand-amber-light: #FEF3C7;
+  --color-brand-amber-dark: #B45309;
+
+  /* Sidebar dark slate */
+  --color-sidebar-bg: #0F172A;
+  --color-sidebar-text: #CBD5E1;
+  --color-sidebar-muted: #64748B;
+  --color-sidebar-active: #F1F5F9;
+  --color-sidebar-accent: #F59E0B;
+
+  /* Content */
+  --color-surface: #F8FAFC;
+  --color-card: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-border-strong: #CBD5E1;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0F172A;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Display headings use Bricolage Grotesque */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Sidebar active state */
+.sidebar-nav-item {
+  color: var(--color-sidebar-text);
+  transition: color 0.15s, background-color 0.15s;
+}
+.sidebar-nav-item:hover {
+  color: var(--color-sidebar-active);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+.sidebar-nav-item.active {
+  color: #FFFFFF;
+  background-color: rgba(245, 158, 11, 0.15);
+  border-left: 3px solid #F59E0B;
+}
+
+/* Amber CTA buttons */
+.btn-primary {
+  background-color: #D97706;
+  color: #FFFFFF;
+  transition: background-color 0.15s;
+}
+.btn-primary:hover {
+  background-color: #B45309;
+}
+
+/* Card base */
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+}
+
+/* Table header */
+.table-header {
+  background: #F8FAFC;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Form inputs */
+input, select, textarea {
+  border-color: var(--color-border);
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #D97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+  outline: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* ========== ENHANCED CARD STYLES ========== */
+
+/* Card with subtle shadow */
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Card hover effect - interactive cards */
+.card-interactive {
+  cursor: pointer;
+}
+.card-interactive:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Card pressed state */
+.card-interactive:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* ========== ENHANCED FOCUS STATES (WCAG 2.2) ========== */
+
+/* Focus visible ring */
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-surface, #F8FAFC), 0 0 0 4px #D97706;
+}
+
+/* Form inputs enhanced focus */
+input, select, textarea {
+  border-color: var(--color-border);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #D97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+  outline: none;
+}
+
+/* Enhanced focus for buttons */
+button:focus-visible,
+.btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-surface, #F8FAFC), 0 0 0 4px #D97706;
+}
+
+/* ========== ANIMATIONS ========== */
+
+/* Slide up animation for toasts */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+/* Slide in from right for realtime notifications */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+/* Fade in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+/* Pulse subtle */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* ========== STEP INDICATOR ========== */
+
+/* Progress steps for multi-step forms/processes */
+.step-indicator {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.step-dot {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: #E2E8F0;
+  transition: background 0.3s ease;
+}
+
+.step-dot.completed {
+  background: #D97706;
+}
+
+.step-dot.active {
+  background: #FCD34D;
+}
+
+.step-dot.upcoming {
+  background: #E2E8F0;
+}
+
+/* ========== BREADCRUMB ========== */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #64748B;
+}
+
+.breadcrumb a {
+  color: #64748B;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.breadcrumb a:hover {
+  color: #D97706;
+}
+
+.breadcrumb-separator {
+  color: #94A3B8;
+}
+
+.breadcrumb-current {
+  color: #0F172A;
+  font-weight: 500;
+}
+
+/* ========== TOAST CONTAINER POSITIONING ========== */
+
+.toast-container {
+  position: fixed;
+  bottom: 6rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 9999;
+}
+
+@media (min-width: 768px) {
+  .toast-container {
+    bottom: 2rem;
+    left: auto;
+    right: 2rem;
+    max-width: 24rem;
+  }
+}
