@@ -17,6 +17,8 @@ Pilih panduan sesuai kebutuhan Anda:
 
 ## Login
 
+[Link ke halaman login](https://proof-of-work-jet.vercel.app/login)
+
 ```
 Admin:       admin@pytagotech.com / admin123
 Supervisor:  supervisor@pytagotech.com / admin123
