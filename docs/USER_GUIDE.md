@@ -33,7 +33,7 @@ Selamat datang! Panduan ini akan membantu Anda menggunakan aplikasi dengan mudah
 
 ### 📸 Layar Login
 
-[Screenshot: Tampilan halaman login]
+<img width="1358" height="648" alt="image" src="https://github.com/user-attachments/assets/cd15521f-3153-4faa-9862-433eef19fdba" />
 
 ### Langkah Login:
 
